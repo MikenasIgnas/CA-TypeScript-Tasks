@@ -15,5 +15,6 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-lone-blocks': 0,
   },
 };
