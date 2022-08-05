@@ -1,13 +1,13 @@
 "use strict";
 const height = 175.0;
 const weight = 78.2;
-const fullname = 'Serbentautas';
-const surname = 'Bordiūras';
+const fullname = 'Vardas';
+const surname = 'Pavarde';
 const age = 19;
 const wife = null;
 const innerAnimal = undefined;
 console.log(height, weight, fullname, surname, age, wife, innerAnimal);
-console.group('1. Priskirkite kintamiesiems duomenų tipus');
+console.group('1. Užduoties Atsakymas');
 {
     const title = 'Vermontas';
     const subTitle = 'Kavinė - Baras';

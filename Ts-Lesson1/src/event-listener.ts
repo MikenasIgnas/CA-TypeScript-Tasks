@@ -1,10 +1,8 @@
-const inputField: HTMLInputElement | null = document.querySelector('#input');
-const result: HTMLParagraphElement | null = document.querySelector('#result');
+const inputField = document.querySelector('#input') as HTMLInputElement;
+const result = document.querySelector('#result') as HTMLParagraphElement;
 
-if (inputField === null) throw new Error('Neteisingas įvesties lauko selektorius');
-if (result === null) throw new Error('Neteisingas rezultatų konteinerio selektorius');
 
-const handleFieldChange: EventListener = (event) => {
+const handleFieldChange = (event) => {
   const element: HTMLInputElement = event.target as HTMLInputElement;
   result.innerHTML = element.value;
 };
