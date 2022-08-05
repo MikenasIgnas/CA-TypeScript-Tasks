@@ -1,30 +1,23 @@
-console.log('asdasds');
-/*
-  Objektų tipai aprašomi aprašant kiekvieną savybę atskirai. Jeigu savybė nėra privaloma, prie savybės pavadinimo rašome klaustuką
-*/
-
+/* eslint-disable no-unused-vars */
 type Person = {
     id: string,
     name: string,
     surname: string,
     age: number,
-    height?: number, // Neprivaloma sabybė
-    weight?: number, // Neprivaloma sabybė
+    height?: number,
+    weight?: number,
   };
 
-// Minimaliai aprašytas Person tipo objektas
 const person1: Person = {
   id: '39304075689',
-  name: 'Verundijus',
-  surname: 'Bauda',
+  name: 'Jonas',
+  surname: 'Jonauas',
   age: 51,
 };
-
-// Pilnai aprašytas Person tipo objektas
 const person2: Person = {
   id: '39304075689',
-  name: 'Ryja',
-  surname: 'Žaneirytė',
+  name: 'Toma',
+  surname: 'Tomauskyte',
   age: 41,
   height: 1.65,
   weight: 55,
@@ -32,26 +25,16 @@ const person2: Person = {
 
 const person3: Person = {
   id: '39304075689',
-  name: 'Brudas',
-  surname: 'Veilokas',
+  name: 'Andrius',
+  surname: 'Andriauskas',
   age: 11,
   height: 1.45,
   weight: 45,
 };
 
-  // Tipo panaudojimas aprašant funkcijas
-  type PersonData = (person: Person) => string | number;
+type PersonData = (person: Person) => string | number;
 const createFullname: PersonData = ({ name, surname }) => `${name} ${surname}`;
 
-const printCouple = (p1: Person, p2: Person): void => {
-  const p1Fullname = createFullname(p1);
-  const p2Fullname = createFullname(p2);
-  console.log(`${p1Fullname} + ${p2Fullname} = ❤`);
-};
-
-printCouple(person1, person2);
-
-// Atlikite užduotis, funkcijas aprašydami tipais
 console.group('1. Užduoties Atsakymas');
 { const legalAge:number = 18;
   const isAdult : PersonData = ({ age }) => (age >= legalAge ? 'Legal Age' : 'Not Legal Age');
@@ -68,10 +51,9 @@ console.group('2.Užduoties Atsakymas');
 {
   const isFullyDescribedPerson = (person:Person) => {
     if (person.height && person.weight) {
-      console.log('Contains Height/Weight');
-    } else {
-      console.log('Doesnt Contain Height/Weight');
+      return 'Contains Height/Weight';
     }
+    return 'Doesnt Contain Height/Weight';
   };
 
   console.log({
@@ -84,9 +66,7 @@ console.groupEnd();
 
 console.group('3.Užduoties Atsakymas');
 {
-  const createInitials = (person:Person) => {
-    console.log(`${`${person.name[0]}.${person.surname[0]}.`}`);
-  };
+  const createInitials = (person:Person) => `${`${person.name[0]}.${person.surname[0]}.`}`;
   console.log({
     [createFullname(person1)]: createInitials(person1),
     [createFullname(person2)]: createInitials(person2),
