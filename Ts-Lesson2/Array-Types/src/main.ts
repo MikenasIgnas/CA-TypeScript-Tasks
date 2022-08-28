@@ -16,7 +16,7 @@ console.group('Užduotys');
   }
   console.groupEnd();
 
-  console.group('2. Užduoties Atsakymas');
+  console.group('2.Užduoties Atsakymas');
   {
     const getFirstLetters = (arr: string[]) => {
       const firstLetter:String[] = [];
@@ -30,7 +30,6 @@ console.group('Užduotys');
     console.log(getFirstLetters(['Loughing', 'Out', 'Loud']));
   }
   console.groupEnd();
-
   console.group('3. Užduoties Atsakymas');
   {
     const multiplyArr = (arr:number[]) => {
